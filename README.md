@@ -2,6 +2,12 @@
 
 Image used to build front end assets and deploy them to AWS S3
 
+# Versions
+
+`latest` is build from `node`
+
+`alpine` is build from `node:alpine`
+
 ## Local
 
 ```sh
