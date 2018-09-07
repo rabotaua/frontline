@@ -5,4 +5,3 @@ RUN git config --global user.email "bitbucket.readonly@rabota.ua" && git config 
 # node-sass
 RUN npm i -g npm
 RUN npm i -g --unsafe-perm node-sass
-RUN npm i -g --unsafe-perm node-sass@4.6
