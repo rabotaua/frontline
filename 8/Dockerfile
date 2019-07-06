@@ -12,3 +12,5 @@ RUN echo sonar.organization=rabotaua > /var/opt/sonar-scanner/conf/sonar-scanner
 RUN echo sonar.host.url=https://sonarcloud.io >> /var/opt/sonar-scanner/conf/sonar-scanner.properties
 RUN chmod +x /var/opt/sonar-scanner/bin/sonar-scanner
 RUN ln -s /var/opt/sonar-scanner/bin/sonar-scanner /usr/local/bin/sonar-scanner
+RUN curl -sSL https://sdk.cloud.google.com | bash
+ENV PATH $PATH:/root/google-cloud-sdk/bin

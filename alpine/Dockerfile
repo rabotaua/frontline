@@ -1,5 +1,5 @@
 FROM node:alpine
-RUN apk add --update python py-pip git curl yarn unzip openjdk8-jre zip
+RUN apk add --update python py-pip git curl yarn unzip openjdk8-jre zip bash which
 RUN pip install awscli
 RUN git config --global user.email "bitbucket.readonly@rabota.ua" && git config --global user.name "ruaonly"
 RUN npm i -g npm
@@ -14,3 +14,6 @@ RUN chmod +x /var/opt/sonar-scanner/bin/sonar-scanner
 RUN ln -s /var/opt/sonar-scanner/bin/sonar-scanner /usr/local/bin/sonar-scanner
 
 RUN sed -i 's/use_embedded_jre=true/use_embedded_jre=false/g' /var/opt/sonar-scanner/bin/sonar-scanner
+
+RUN curl -sSL https://sdk.cloud.google.com | bash
+ENV PATH $PATH:/root/google-cloud-sdk/bin
